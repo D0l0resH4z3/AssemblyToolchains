@@ -10,6 +10,7 @@ Kanwarveerpratap Singh
 Monik Narshibhai Nakrani  
 Lubos Kuzma (https://www.linkedin.com/in/lubos-kuzma-0719a586)  
 Saiban Muhammad  
+Sam Fassil
 
 
 
@@ -26,12 +27,10 @@ Saiban Muhammad
 - ~~improvements to arguments structure/parsing~~
 - ~~annotate every line - x86 / ARM~~
 - create documentation
-- general improvements to Help (no arguments)
+- ~~general improvements to Help (no arguments)~~
 - general improvements to arguments
 - create installation mechanism (make file or install script) for Linux
 - create installation mechanism (make file or install script) for Windows
 - create installation mechanism (make file or install script) for Mac
 - any other improvements you can think of
 - Python version(s)? (this might be pretty big undertaking)
-
-
