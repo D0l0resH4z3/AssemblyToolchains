@@ -5,11 +5,10 @@
 # August 2022
 #edits by Saiban: 64-bit is default
 # Edits by Ben: Implemented getopt for command line
+# Edits by Sam: general improvements to Help (no arguments)
 
 if [ $# -lt 1 ]; then # if no option is selected the user guide is printed
-        echo "Usage:"
-        echo ""
-        echo "x86_toolchain.sh [ options ] <assembly filename> [-o | --output <output filename>]"
+        echo "You did noy enter any parameters/specified filename, below are the options supported by this script:"
         echo ""
         echo "-v | --verbose                Show some information about steps performed."
         echo "-g | --gdb                    Run gdb command on executable."
@@ -18,6 +17,9 @@ if [ $# -lt 1 ]; then # if no option is selected the user guide is printed
         echo "-q | --qemu                   Run executable in QEMU emulator. This will execute the program."
         echo "-32| --x86-32                 Compile for 32bit (x86-32) system."
         echo "-o | --output <filename>      Output filename."
+        echo ""
+        echo "Here is an example of what it can look like"
+        echo "x86_toolchain.sh part1.nasm -v -g -r -q"
 
         exit 1 # after printing the guide the program will exit
 fi # closes the above if statement
