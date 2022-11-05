@@ -7,8 +7,9 @@
 # Edits by Ben: Implemented getopt for command line
 # Edits by Sam: general improvements to Help (no arguments)
 
-if [ $# -lt 1 ]; then # if no option is selected the user guide is printed
-        echo "You did noy enter any parameters/specified filename, below are the options supported by this script:"
+Help() # Help function
+{
+        echo "Welcome to the x86_toolchain script, here are some arguments that you can use:"
         echo ""
         echo "-v | --verbose                Show some information about steps performed."
         echo "-g | --gdb                    Run gdb command on executable."
@@ -20,9 +21,23 @@ if [ $# -lt 1 ]; then # if no option is selected the user guide is printed
         echo ""
         echo "Here is an example of what it can look like"
         echo "x86_toolchain.sh part1.nasm -v -g -r -q"
+}
 
-        exit 1 # after printing the guide the program will exit
-fi # closes the above if statement
+while getopts ":h" option; do
+        case $option in
+                h)
+                        Help
+                        exit;;
+                /?)
+                        echo "You have used a invalid argument, program closing"
+                        echo " "
+                        echo "."
+                        echo ".."
+                        echo "..."
+                        exit;;
+        esac
+done
+                        
 
 # setting default parameters
 GDB=False
