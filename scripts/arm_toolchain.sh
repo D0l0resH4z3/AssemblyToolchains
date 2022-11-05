@@ -4,9 +4,9 @@
 # ISS Program, SADT, SAIT
 # August 2022
 
-
-if [ $# -lt 1 ]; then    # it will show the usage of the toolchain
-        echo "Usage:"
+Help()
+{
+        echo "Welcome to the ARM Toolchain script, below are arguments you may use to run program:"
         echo ""
         echo "arm_toolchain.sh  [-p | --port <port number, default 12222>] <assembly filename> [-o | --output <output filename>]"
         echo ""
@@ -20,9 +20,23 @@ if [ $# -lt 1 ]; then    # it will show the usage of the toolchain
         echo "-q    | --qemu                   Run executable in QEMU emulator. This will execute the program."
         echo "-p    | --port                   Specify a port for communication between QEMU and GDB. Default is 12222."
         echo "-o    | --output <filename>      Output filename."
+}
 
-        exit 1
-fi
+while getopts ":h" option; do
+        case $option in
+                h)
+                        Help
+                        exit;;
+                /?)
+                        echo "You have used a invalid argument, program closing"
+                        echo " "
+                        echo "."
+                        echo ".."
+                        echo "..."
+                        exit;;
+        esac
+done
+
   # Below are the default values and these will be applied if user do not specify
 POSITIONAL_ARGS=()
 GDB=False
